@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thế Giới Di Động - Điện thoại, Laptop, Tablet giá tốt</title>
+    <link rel="icon" href="https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/favicon.ico" type="image/x-icon">
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            font-size: 14px;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ===== HEADER TOP BAR ===== */
+        .header-top {
+            background: #ffd400;
+            padding: 6px 0;
+            font-size: 12px;
+        }
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-top-left a {
+            margin-right: 15px;
+            color: #333;
+            font-weight: 500;
+        }
+        .header-top-left a:hover {
+            color: #d0021b;
+        }
+        .header-top-right a {
+            margin-left: 15px;
+            color: #333;
+        }
+
+        /* ===== HEADER MAIN ===== */
+        .header-main {
+            background: #ffd400;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        }
+        .header-main .container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Logo */
+        .logo {
+            flex-shrink: 0;
+        }
+        .logo-text {
+            font-size: 20px;
+            font-weight: 900;
+            color: #d0021b;
+            letter-spacing: -0.5px;
+            white-space: nowrap;
+        }
+        .logo-text span {
+            color: #333;
+        }
+
+        /* Search */
+        .search-bar {
+            flex: 1;
+            max-width: 560px;
+            position: relative;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px 45px 10px 15px;
+            border: none;
+            border-radius: 20px;
+            font-size: 14px;
+            outline: none;
+            background: #fff;
+        }
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 18px;
+            color: #666;
+            padding: 5px 10px;
+        }
+        .search-bar button:hover {
+            color: #d0021b;
+        }
+
+        /* Header Actions */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+        .header-action-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(0,0,0,0.08);
+            padding: 6px 12px;
+            border-radius: 18px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+        .header-action-item:hover {
+            background: rgba(0,0,0,0.15);
+        }
+        .header-action-item .icon {
+            font-size: 18px;
+        }
+        .cart-badge {
+            background: #d0021b;
+            color: #fff;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .main-nav {
+            background: #333;
+        }
+        .main-nav .container {
+            display: flex;
+            align-items: center;
+        }
+        .main-nav ul {
+            display: flex;
+            width: 100%;
+        }
+        .main-nav li {
+            flex: 1;
+            text-align: center;
+        }
+        .main-nav li a {
+            display: block;
+            padding: 10px 8px;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+        .main-nav li a:hover {
+            background: #ffd400;
+            color: #333;
+        }
+        .main-nav li a.active {
+            background: #ffd400;
+            color: #333;
+            font-weight: 700;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* ===== BANNER SLIDER ===== */
+        .banner-section {
+            padding: 15px 0;
+        }
+        .banner-wrapper {
+            display: flex;
+            gap: 10px;
+        }
+        .banner-main {
+            flex: 2;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #1a1a2e;
+            min-height: 300px;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+        .slide.active {
+            display: flex;
+            align-items: center;
+        }
+        .slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .slide-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 20px 30px;
+        }
+        .slide-text {
+            flex: 1;
+            color: #fff;
+        }
+        .slide-text h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .slide-text p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        .slide-text .slide-price {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ffd400;
+        }
+        .slide-text .slide-btn {
+            display: inline-block;
+            background: #ffd400;
+            color: #333;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 10px;
+            transition: transform 0.2s;
+        }
+        .slide-text .slide-btn:hover {
+            transform: scale(1.05);
+        }
+        .slide-img {
+            flex: 0 0 220px;
+            text-align: center;
+        }
+        .slide-img img {
+            max-height: 250px;
+            margin: 0 auto;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+            object-fit: contain;
+        }
+        .slider-controls {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 5;
+        }
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            border: none;
+            transition: background 0.3s;
+        }
+        .slider-dot.active {
+            background: #ffd400;
+        }
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+        }
+        .slider-arrow:hover {
+            background: rgba(0,0,0,0.7);
+        }
+        .slider-arrow.prev { left: 10px; }
+        .slider-arrow.next { right: 10px; }
+
+        .banner-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .banner-side-item {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 18px 15px;
+            color: #fff;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .banner-side-item:hover {
+            transform: scale(1.02);
+        }
+        .banner-side-item.tragop {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+        }
+        .banner-side-item.tradein {
+            background: linear-gradient(135deg, #333 0%, #555 100%);
+        }
+        .banner-side-info {
+            flex: 1;
+        }
+        .banner-side-info h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        .banner-side-info p {
+            font-size: 12px;
+            opacity: 0.85;
+        }
+        .banner-side-icon {
+            font-size: 42px;
+            margin-left: 10px;
+        }
+
+        /* ===== CATEGORY ICONS ===== */
+        .category-section {
+            padding: 10px 0 15px;
+        }
+        .category-list {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 5px 0;
+        }
+        .category-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 80px;
+            padding: 10px 8px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-align: center;
+        }
+        .category-item:hover {
+            background: #e8e8e8;
+        }
+        .category-item .cat-icon {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        .category-item span {
+            font-size: 11px;
+            color: #555;
+            line-height: 1.3;
+        }
+
+        /* ===== FLASH SALE ===== */
+        .flash-sale-section {
+            background: linear-gradient(135deg, #d0021b 0%, #ff4444 100%);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+        }
+        .flash-sale-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .flash-sale-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .flash-sale-title h2 {
+            color: #ffd400;
+            font-size: 22px;
+            text-transform: uppercase;
+        }
+        .flash-sale-title .lightning {
+            font-size: 26px;
+        }
+        .countdown {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            color: #fff;
+        }
+        .countdown-box {
+            background: #333;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 16px;
+            min-width: 35px;
+            text-align: center;
+        }
+        .countdown span {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .flash-sale-products {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+        .flash-sale-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 12px;
+            min-width: 180px;
+            max-width: 180px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            position: relative;
+        }
+        .flash-sale-card:hover {
+            transform: translateY(-3px);
+        }
+        .flash-sale-card .card-img {
+            width: 100%;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+        .flash-sale-card .card-img img {
+            max-width: 100%;
+            max-height: 140px;
+            object-fit: contain;
+        }
+        .flash-sale-card .product-name {
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 34px;
+        }
+        .flash-sale-card .sale-price {
+            color: #d0021b;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .flash-sale-card .original-price {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 12px;
+            margin-top: 2px;
+        }
+        .discount-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: #d0021b;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        .sale-progress {
+            background: #fce4e4;
+            border-radius: 10px;
+            height: 16px;
+            margin-top: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        .sale-progress-bar {
+            background: linear-gradient(90deg, #ff4444, #d0021b);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s;
+        }
+        .sale-progress span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10px;
+            color: #d0021b;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        /* ===== PRODUCT SECTION ===== */
+        .product-section {
+            margin-bottom: 25px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        .section-header h2 {
+            font-size: 20px;
+            color: #333;
+        }
+        .section-header .view-all {
+            color: #1a73e8;
+            font-size: 14px;
+        }
+        .section-header .view-all:hover {
+            text-decoration: underline;
+        }
+
+        /* Filter Tags */
+        .filter-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        .filter-tag {
+            padding: 6px 14px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #fff;
+        }
+        .filter-tag:hover, .filter-tag.active {
+            border-color: #d0021b;
+            color: #d0021b;
+            background: #fff5f5;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+            position: relative;
+        }
+        .product-card:hover {
+            border-color: #d0021b;
+            box-shadow: 0 2px 12px rgba(208,2,27,0.15);
+            transform: translateY(-2px);
+        }
+        .product-card .card-img {
+            width: 100%;
+            height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .product-card .card-img img {
+            max-width: 100%;
+            max-height: 170px;
+            object-fit: contain;
+        }
+        .product-card .product-name {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 38px;
+            color: #333;
+        }
+        .product-card .product-price {
+            color: #d0021b;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 3px;
+        }
+        .product-card .product-original-price {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 13px;
+        }
+        .product-card .product-discount {
+            display: inline-block;
+            background: #fff0e9;
+            color: #d0021b;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 2px 5px;
+            border-radius: 3px;
+            margin-left: 5px;
+        }
+        .product-card .product-promo {
+            background: #f3f4f6;
+            border-radius: 5px;
+            padding: 6px 8px;
+            font-size: 11px;
+            color: #555;
+            margin-top: 8px;
+            line-height: 1.4;
+        }
+        .product-card .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 8px;
+            font-size: 12px;
+            color: #888;
+        }
+        .product-card .stars {
+            color: #f5a623;
+            font-size: 12px;
+        }
+        .product-label {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: #ffd400;
+            color: #333;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        /* ===== BRAND SECTION ===== */
+        .brand-section {
+            margin-bottom: 25px;
+        }
+        .brand-list {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .brand-item {
+            background: #fff;
+            border-radius: 10px;
+            padding: 12px 25px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .brand-item:hover {
+            border-color: #d0021b;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .brand-item span {
+            font-size: 14px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* ===== NEWS SECTION ===== */
+        .news-section {
+            margin-bottom: 25px;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        .news-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .news-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .news-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .news-card .news-content {
+            padding: 10px;
+        }
+        .news-card h3 {
+            font-size: 13px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .news-card .news-date {
+            font-size: 11px;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        /* ===== SERVICE SECTION ===== */
+        .service-section {
+            margin-bottom: 25px;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        .service-item {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .service-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .service-item .service-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .service-item h3 {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .service-item p {
+            font-size: 12px;
+            color: #888;
+            line-height: 1.4;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #333;
+            color: #ccc;
+            padding: 30px 0 15px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+        .footer-col h3 {
+            color: #fff;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+        .footer-col a {
+            display: block;
+            padding: 3px 0;
+            font-size: 13px;
+            color: #aaa;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover {
+            color: #ffd400;
+        }
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-bottom p {
+            font-size: 12px;
+            color: #888;
+        }
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+        .social-links a {
+            width: 32px;
+            height: 32px;
+            background: #555;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .social-links a:hover {
+            background: #ffd400;
+            color: #333;
+        }
+
+        /* ===== BACK TO TOP ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 42px;
+            height: 42px;
+            background: #ffd400;
+            color: #333;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: background 0.2s;
+            z-index: 999;
+        }
+        .back-to-top:hover {
+            background: #e6be00;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .header-main .container {
+                flex-wrap: wrap;
+            }
+            .search-bar {
+                order: 3;
+                max-width: 100%;
+                width: 100%;
+            }
+            .banner-wrapper {
+                flex-direction: column;
+            }
+            .banner-side {
+                flex-direction: row;
+            }
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .news-grid, .footer-grid, .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .header-top {
+                display: none;
+            }
+            .slide-text h2 { font-size: 20px; }
+            .slide-text p { font-size: 13px; }
+            .slide-img { flex: 0 0 150px; }
+        }
+        @media (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .news-grid, .service-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-actions {
+                gap: 6px;
+            }
+            .header-action-item {
+                padding: 5px 8px;
+                font-size: 11px;
+            }
+            .slide-img { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER TOP BAR ===== -->
+    <div class="header-top">
+        <div class="container">
+            <div class="header-top-left">
+                <a href="#">Hệ thống 1200+ siêu thị toàn quốc</a>
+                <a href="#">Tuyển dụng</a>
+                <a href="#">Khuyến mãi HOT</a>
+            </div>
+            <div class="header-top-right">
+                <a href="#">📞 Gọi mua: 1800.1060 (Miễn phí)</a>
+                <a href="#">Tra cứu đơn hàng</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== HEADER MAIN ===== -->
+    <header class="header-main">
+        <div class="container">
+            <a href="#" class="logo">
+                <div class="logo-text">thegioididong<span>.com</span></div>
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="Bạn tìm gì...">
+                <button>🔍</button>
+            </div>
+            <div class="header-actions">
+                <a href="#" class="header-action-item">
+                    <span class="icon">📍</span>
+                    <span>Cửa hàng<br>gần bạn</span>
+                </a>
+                <a href="#" class="header-action-item">
+                    <span class="icon">📋</span>
+                    <span>Tra cứu<br>đơn hàng</span>
+                </a>
+                <a href="#" class="header-action-item">
+                    <span class="icon">🛒</span>
+                    <span>Giỏ hàng</span>
+                    <span class="cart-badge">0</span>
+                </a>
+                <a href="#" class="header-action-item">
+                    <span class="icon">👤</span>
+                    <span>Đăng<br>nhập</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#" class="active">📱 Điện thoại</a></li>
+                <li><a href="#">💻 Laptop</a></li>
+                <li><a href="#">📱 Tablet</a></li>
+                <li><a href="#">🎧 Phụ kiện</a></li>
+                <li><a href="#">📺 Tivi</a></li>
+                <li><a href="#">⌚ Đồng hồ</a></li>
+                <li><a href="#">🏠 Gia dụng</a></li>
+                <li><a href="#">🔊 Âm thanh</a></li>
+                <li><a href="#">🖥️ PC, Màn hình</a></li>
+                <li><a href="#">🎮 Gaming</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+        <!-- Banner Slider -->
+        <section class="banner-section">
+            <div class="container">
+                <div class="banner-wrapper">
+                    <div class="banner-main">
+                        <!-- Slide 1 - iPhone 16 Pro Max -->
+                        <div class="slide active" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+                            <div class="slide-content">
+                                <div class="slide-text">
+                                    <h2>iPhone 16 Pro Max</h2>
+                                    <p>Chip A18 Pro • Camera 48MP Tetraprism<br>Titan cực bền, thiết kế mới</p>
+                                    <div class="slide-price">Từ 33.490.000₫</div>
+                                    <a href="#" class="slide-btn">MUA NGAY →</a>
+                                </div>
+                                <div class="slide-img">
+                                    <img src="IMG/iphone-16-pro-max.jpg" alt="iPhone 16 Pro Max">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 - Galaxy S25 Ultra -->
+                        <div class="slide" style="background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 50%, #1a3a5c 100%);">
+                            <div class="slide-content">
+                                <div class="slide-text">
+                                    <h2>Galaxy S25 Ultra</h2>
+                                    <p>Galaxy AI mạnh mẽ • Snapdragon 8 Elite<br>Camera 200MP, S Pen tích hợp</p>
+                                    <div class="slide-price">Giảm đến 5 triệu</div>
+                                    <a href="#" class="slide-btn">MUA NGAY →</a>
+                                </div>
+                                <div class="slide-img">
+                                    <img src="IMG/galaxy-s25-ultra.jpg" alt="Samsung Galaxy S25 Ultra">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3 - OPPO Find X8 -->
+                        <div class="slide" style="background: linear-gradient(135deg, #1a3c34 0%, #0d2b1f 50%, #1e5128 100%);">
+                            <div class="slide-content">
+                                <div class="slide-text">
+                                    <h2>OPPO Find X8</h2>
+                                    <p>Camera Hasselblad • Dimensity 9400<br>Sạc nhanh 80W, thiết kế sang trọng</p>
+                                    <div class="slide-price">Từ 18.990.000₫</div>
+                                    <a href="#" class="slide-btn">MUA NGAY →</a>
+                                </div>
+                                <div class="slide-img">
+                                    <img src="IMG/oppo-find-x8.jpg" alt="OPPO Find X8">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 4 - Xiaomi 15 -->
+                        <div class="slide" style="background: linear-gradient(135deg, #2d1b3d 0%, #44185a 50%, #5c2d91 100%);">
+                            <div class="slide-content">
+                                <div class="slide-text">
+                                    <h2>Xiaomi 15 Pro</h2>
+                                    <p>Camera Leica chuyên nghiệp<br>Snapdragon 8 Elite • Pin 6100mAh</p>
+                                    <div class="slide-price">Chỉ từ 16.490.000₫</div>
+                                    <a href="#" class="slide-btn">MUA NGAY →</a>
+                                </div>
+                                <div class="slide-img">
+                                    <img src="IMG/xiaomi-15-pro.jpg" alt="Xiaomi 15 Pro">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="slider-arrow prev" onclick="changeSlide(-1)">❮</button>
+                        <button class="slider-arrow next" onclick="changeSlide(1)">❯</button>
+                        <div class="slider-controls">
+                            <button class="slider-dot active" onclick="goToSlide(0)"></button>
+                            <button class="slider-dot" onclick="goToSlide(1)"></button>
+                            <button class="slider-dot" onclick="goToSlide(2)"></button>
+                            <button class="slider-dot" onclick="goToSlide(3)"></button>
+                        </div>
+                    </div>
+                    <div class="banner-side">
+                        <a href="#" class="banner-side-item tragop">
+                            <div class="banner-side-info">
+                                <h3>Trả góp 0%</h3>
+                                <p>Duyệt nhanh qua Online<br>Không lãi suất, 0đ trả trước</p>
+                            </div>
+                            <div class="banner-side-icon">💳</div>
+                        </a>
+                        <a href="#" class="banner-side-item tradein">
+                            <div class="banner-side-info">
+                                <h3>Thu cũ đổi mới</h3>
+                                <p>Trợ giá đến 2 triệu<br>Định giá nhanh, đổi tại nhà</p>
+                            </div>
+                            <div class="banner-side-icon">🔄</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Icons -->
+        <section class="category-section">
+            <div class="container">
+                <div class="category-list">
+                    <a href="#" class="category-item"><span class="cat-icon">📱</span><span>Điện thoại</span></a>
+                    <a href="#" class="category-item"><span class="cat-icon">💻</span><span>Laptop</span></a>
+                    <a href="#" class="category-item"><span class="cat-icon">📱</span><span>Tablet</span></a>
+                    <a href="#" class="category-item"><span class="cat-icon">🎧</span><span>Tai nghe</span></a>
+                    <a href="#" class="category-item"><span class="cat-icon">⌚</span><span>Đồng hồ<br>thông minh</span></a>
+                    <a href="#" class="category-item"><span class="cat-icon">📺</span><span>Tivi</span></a>
+                    <a href="#" class="category-item"><span class="cat-icon">🔌</span><span>Sạc dự<br>phòng</span></a>
+                    <a href="#" class="category-item"><span class="cat-icon">🖥️</span><span>Màn hình</span></a>
+                    <a href="#" class="category-item"><span class="cat-icon">🖨️</span><span>Máy in</span></a>
+                    <a href="#" class="category-item"><span class="cat-icon">📷</span><span>Camera</span></a>
+                    <a href="#" class="category-item"><span class="cat-icon">🏠</span><span>Gia dụng</span></a>
+                    <a href="#" class="category-item"><span class="cat-icon">🎮</span><span>Gaming</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flash Sale -->
+        <section class="container">
+            <div class="flash-sale-section">
+                <div class="flash-sale-header">
+                    <div class="flash-sale-title">
+                        <span class="lightning">⚡</span>
+                        <h2>SĂN SALE ONLINE MỖI NGÀY</h2>
+                        <span class="lightning">⚡</span>
+                    </div>
+                    <div class="countdown">
+                        <span>Kết thúc sau:</span>
+                        <div class="countdown-box" id="hours">05</div>
+                        <span>:</span>
+                        <div class="countdown-box" id="minutes">23</div>
+                        <span>:</span>
+                        <div class="countdown-box" id="seconds">47</div>
+                    </div>
+                </div>
+                <div class="flash-sale-products">
+                    <div class="flash-sale-card">
+                        <span class="discount-badge">-35%</span>
+                        <div class="card-img"><img src="IMG/galaxy-a16.jpg" alt="Galaxy A16"></div>
+                        <div class="product-name">Samsung Galaxy A16 5G 128GB</div>
+                        <div class="sale-price">4.090.000₫</div>
+                        <div class="original-price">6.290.000₫</div>
+                        <div class="sale-progress">
+                            <div class="sale-progress-bar" style="width: 78%"></div>
+                            <span>Đã bán 78%</span>
+                        </div>
+                    </div>
+                    <div class="flash-sale-card">
+                        <span class="discount-badge">-20%</span>
+                        <div class="card-img"><img src="IMG/oppo-a3.jpg" alt="OPPO A3"></div>
+                        <div class="product-name">OPPO A3 4G 128GB</div>
+                        <div class="sale-price">3.690.000₫</div>
+                        <div class="original-price">4.590.000₫</div>
+                        <div class="sale-progress">
+                            <div class="sale-progress-bar" style="width: 62%"></div>
+                            <span>Đã bán 62%</span>
+                        </div>
+                    </div>
+                    <div class="flash-sale-card">
+                        <span class="discount-badge">-25%</span>
+                        <div class="card-img"><img src="IMG/xiaomi-14t.jpg" alt="Xiaomi 14T"></div>
+                        <div class="product-name">Xiaomi 14T 5G 256GB</div>
+                        <div class="sale-price">9.490.000₫</div>
+                        <div class="original-price">12.590.000₫</div>
+                        <div class="sale-progress">
+                            <div class="sale-progress-bar" style="width: 45%"></div>
+                            <span>Đã bán 45%</span>
+                        </div>
+                    </div>
+                    <div class="flash-sale-card">
+                        <span class="discount-badge">-18%</span>
+                        <div class="card-img"><img src="IMG/airpods-4.jpg" alt="AirPods 4"></div>
+                        <div class="product-name">Apple AirPods 4 (2024)</div>
+                        <div class="sale-price">2.790.000₫</div>
+                        <div class="original-price">3.390.000₫</div>
+                        <div class="sale-progress">
+                            <div class="sale-progress-bar" style="width: 90%"></div>
+                            <span>Sắp hết hàng!</span>
+                        </div>
+                    </div>
+                    <div class="flash-sale-card">
+                        <span class="discount-badge">-22%</span>
+                        <div class="card-img"><img src="IMG/redmi-14c.jpg" alt="Redmi 14C"></div>
+                        <div class="product-name">Xiaomi Redmi 14C 128GB</div>
+                        <div class="sale-price">2.690.000₫</div>
+                        <div class="original-price">3.490.000₫</div>
+                        <div class="sale-progress">
+                            <div class="sale-progress-bar" style="width: 55%"></div>
+                            <span>Đã bán 55%</span>
+                        </div>
+                    </div>
+                    <div class="flash-sale-card">
+                        <span class="discount-badge">-30%</span>
+                        <div class="card-img"><img src="IMG/galaxy-buds-fe.jpg" alt="Galaxy Buds FE"></div>
+                        <div class="product-name">Samsung Galaxy Buds FE</div>
+                        <div class="sale-price">1.290.000₫</div>
+                        <div class="original-price">1.890.000₫</div>
+                        <div class="sale-progress">
+                            <div class="sale-progress-bar" style="width: 83%"></div>
+                            <span>Đã bán 83%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Điện thoại nổi bật -->
+        <section class="product-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>📱 Điện thoại nổi bật</h2>
+                    <a href="#" class="view-all">Xem tất cả →</a>
+                </div>
+                <div class="filter-tags">
+                    <span class="filter-tag active">Nổi bật</span>
+                    <span class="filter-tag">Bán chạy</span>
+                    <span class="filter-tag">Apple</span>
+                    <span class="filter-tag">Samsung</span>
+                    <span class="filter-tag">Xiaomi</span>
+                    <span class="filter-tag">OPPO</span>
+                    <span class="filter-tag">Vivo</span>
+                    <span class="filter-tag">realme</span>
+                    <span class="filter-tag">Dưới 5 triệu</span>
+                    <span class="filter-tag">Từ 5 - 10 triệu</span>
+                    <span class="filter-tag">Trên 10 triệu</span>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <span class="product-label">Trả góp 0%</span>
+                        <div class="card-img"><img src="IMG/iphone-16-pro-max.jpg" alt="iPhone 16 Pro Max"></div>
+                        <div class="product-name">iPhone 16 Pro Max 256GB</div>
+                        <div class="product-price">33.490.000₫</div>
+                        <div>
+                            <span class="product-original-price">34.990.000₫</span>
+                            <span class="product-discount">-4%</span>
+                        </div>
+                        <div class="product-promo">🎁 Thu cũ giảm thêm đến 2 triệu</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>(1.2k đánh giá)</span>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <span class="product-label">Mới</span>
+                        <div class="card-img"><img src="IMG/galaxy-s25-ultra.jpg" alt="Samsung Galaxy S25 Ultra"></div>
+                        <div class="product-name">Samsung Galaxy S25 Ultra 256GB</div>
+                        <div class="product-price">28.990.000₫</div>
+                        <div>
+                            <span class="product-original-price">33.990.000₫</span>
+                            <span class="product-discount">-15%</span>
+                        </div>
+                        <div class="product-promo">🎁 Giảm thêm 1 triệu qua VNPay</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>(856 đánh giá)</span>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="card-img"><img src="IMG/iphone-16.jpg" alt="iPhone 16"></div>
+                        <div class="product-name">iPhone 16 128GB</div>
+                        <div class="product-price">22.190.000₫</div>
+                        <div>
+                            <span class="product-original-price">24.990.000₫</span>
+                            <span class="product-discount">-11%</span>
+                        </div>
+                        <div class="product-promo">🎁 Trả góp 0% - Thu cũ giảm thêm</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(2.3k đánh giá)</span>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <span class="product-label">HOT</span>
+                        <div class="card-img"><img src="IMG/oppo-find-x8.jpg" alt="OPPO Find X8"></div>
+                        <div class="product-name">OPPO Find X8 5G 512GB</div>
+                        <div class="product-price">18.990.000₫</div>
+                        <div>
+                            <span class="product-original-price">22.990.000₫</span>
+                            <span class="product-discount">-17%</span>
+                        </div>
+                        <div class="product-promo">🎁 Tặng ốp lưng cao cấp</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>(423 đánh giá)</span>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="card-img"><img src="IMG/xiaomi-15-pro.jpg" alt="Xiaomi 15 Pro"></div>
+                        <div class="product-name">Xiaomi 15 Pro 5G 256GB</div>
+                        <div class="product-price">16.490.000₫</div>
+                        <div>
+                            <span class="product-original-price">18.990.000₫</span>
+                            <span class="product-discount">-13%</span>
+                        </div>
+                        <div class="product-promo">🎁 Giảm 500K thanh toán online</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(267 đánh giá)</span>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <span class="product-label">Bán chạy</span>
+                        <div class="card-img"><img src="IMG/galaxy-a16.jpg" alt="Samsung Galaxy A16"></div>
+                        <div class="product-name">Samsung Galaxy A16 5G 128GB</div>
+                        <div class="product-price">5.490.000₫</div>
+                        <div>
+                            <span class="product-original-price">6.290.000₫</span>
+                            <span class="product-discount">-13%</span>
+                        </div>
+                        <div class="product-promo">🎁 Trả góp 0% qua thẻ tín dụng</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(3.1k đánh giá)</span>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="card-img"><img src="IMG/redmi-note-14-pro.jpg" alt="Redmi Note 14 Pro"></div>
+                        <div class="product-name">Xiaomi Redmi Note 14 Pro 5G 256GB</div>
+                        <div class="product-price">7.490.000₫</div>
+                        <div>
+                            <span class="product-original-price">8.990.000₫</span>
+                            <span class="product-discount">-17%</span>
+                        </div>
+                        <div class="product-promo">🎁 Tặng kèm ốp lưng + dán màn hình</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>(1.8k đánh giá)</span>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="card-img"><img src="IMG/vivo-v40.jpg" alt="vivo V40"></div>
+                        <div class="product-name">vivo V40 5G 256GB</div>
+                        <div class="product-price">9.990.000₫</div>
+                        <div>
+                            <span class="product-original-price">11.490.000₫</span>
+                            <span class="product-discount">-13%</span>
+                        </div>
+                        <div class="product-promo">🎁 Giảm 300K khi mua online</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(567 đánh giá)</span>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="card-img"><img src="IMG/realme-gt7-pro.jpg" alt="realme GT 7 Pro"></div>
+                        <div class="product-name">realme GT 7 Pro 5G 256GB</div>
+                        <div class="product-price">14.990.000₫</div>
+                        <div>
+                            <span class="product-original-price">16.990.000₫</span>
+                            <span class="product-discount">-12%</span>
+                        </div>
+                        <div class="product-promo">🎁 Tặng sạc nhanh 120W</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>(189 đánh giá)</span>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <span class="product-label">Giá rẻ</span>
+                        <div class="card-img"><img src="IMG/oppo-a3.jpg" alt="OPPO A3"></div>
+                        <div class="product-name">OPPO A3 4G 128GB</div>
+                        <div class="product-price">3.990.000₫</div>
+                        <div>
+                            <span class="product-original-price">4.590.000₫</span>
+                            <span class="product-discount">-13%</span>
+                        </div>
+                        <div class="product-promo">🎁 Tặng PMH 200K mua phụ kiện</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(945 đánh giá)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hãng nổi bật -->
+        <section class="brand-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>🏷️ Hãng nổi bật</h2>
+                </div>
+                <div class="brand-list">
+                    <a href="#" class="brand-item"><span>Apple</span></a>
+                    <a href="#" class="brand-item"><span>Samsung</span></a>
+                    <a href="#" class="brand-item"><span>Xiaomi</span></a>
+                    <a href="#" class="brand-item"><span>OPPO</span></a>
+                    <a href="#" class="brand-item"><span>vivo</span></a>
+                    <a href="#" class="brand-item"><span>realme</span></a>
+                    <a href="#" class="brand-item"><span>Nokia</span></a>
+                    <a href="#" class="brand-item"><span>Honor</span></a>
+                    <a href="#" class="brand-item"><span>Tecno</span></a>
+                    <a href="#" class="brand-item"><span>Nothing</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dịch vụ -->
+        <section class="service-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>⭐ Dịch vụ & Tiện ích</h2>
+                </div>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <div class="service-icon">🚚</div>
+                        <h3>Giao hàng miễn phí</h3>
+                        <p>Miễn phí giao hàng toàn quốc cho đơn từ 300K</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">🔄</div>
+                        <h3>Thu cũ đổi mới</h3>
+                        <p>Trade-in giá cao, hỗ trợ trợ giá thêm khi đổi máy mới</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">🛡️</div>
+                        <h3>Bảo hành chính hãng</h3>
+                        <p>12 tháng bảo hành chính hãng + 1 đổi 1 trong 30 ngày</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">💳</div>
+                        <h3>Trả góp 0%</h3>
+                        <p>Trả góp 0% lãi suất qua thẻ tín dụng & công ty tài chính</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tin tức công nghệ -->
+        <section class="news-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>📰 24h Công nghệ</h2>
+                    <a href="#" class="view-all">Xem tất cả →</a>
+                </div>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <img src="IMG/news-iphone17.jpg" alt="iPhone 17">
+                        <div class="news-content">
+                            <h3>iPhone 17 lộ diện thiết kế mới với camera ngang, mỏng hơn cả iPhone 16</h3>
+                            <div class="news-date">25/10/2026</div>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img src="IMG/news-galaxy-s26.jpg" alt="Galaxy S26">
+                        <div class="news-content">
+                            <h3>Samsung Galaxy S26 sẽ sử dụng chip Snapdragon 8 Elite 2, mạnh hơn 40%</h3>
+                            <div class="news-date">24/10/2026</div>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img src="IMG/news-top10.jpg" alt="Top điện thoại">
+                        <div class="news-content">
+                            <h3>Top 10 điện thoại dưới 5 triệu đáng mua nhất tháng 10/2026</h3>
+                            <div class="news-date">23/10/2026</div>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img src="IMG/news-sosanh.jpg" alt="So sánh">
+                        <div class="news-content">
+                            <h3>So sánh iPhone 16 Pro Max vs Samsung Galaxy S25 Ultra: Flagship nào đáng mua?</h3>
+                            <div class="news-date">22/10/2026</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Tìm hiểu thêm</h3>
+                    <a href="#">Giới thiệu công ty</a>
+                    <a href="#">Chính sách bảo mật</a>
+                    <a href="#">Quy chế hoạt động</a>
+                    <a href="#">Kiểm tra hóa đơn</a>
+                    <a href="#">Tra cứu thông tin bảo hành</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Hỗ trợ khách hàng</h3>
+                    <a href="#">Điều kiện giao dịch chung</a>
+                    <a href="#">Hướng dẫn mua hàng online</a>
+                    <a href="#">Chính sách giao hàng</a>
+                    <a href="#">Hướng dẫn thanh toán</a>
+                    <a href="#">Hướng dẫn trả góp</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Chính sách</h3>
+                    <a href="#">Chính sách đổi trả</a>
+                    <a href="#">Chính sách bảo hành</a>
+                    <a href="#">Chính sách trả góp</a>
+                    <a href="#">Chính sách khách hàng doanh nghiệp</a>
+                    <a href="#">Chính sách Smember</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Liên hệ</h3>
+                    <a href="#">📞 Mua hàng: 1800.1060</a>
+                    <a href="#">📞 Khiếu nại: 1800.1062</a>
+                    <a href="#">✉️ Email: cskh@thegioididong.com</a>
+                    <a href="#">📍 128 Trần Quang Khải, P. Tân Định, Q.1, TP.HCM</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Công ty Cổ phần Thế Giới Di Động. GPDKKD: 0303217354 do Sở KH&ĐT TP.HCM cấp.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="YouTube">▶</a>
+                    <a href="#" title="TikTok">♪</a>
+                    <a href="#" title="Instagram">📷</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">▲</button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ========== SLIDER ==========
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        let slideInterval;
+
+        function showSlide(index) {
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            currentSlide = (index + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+            resetAutoSlide();
+        }
+
+        function goToSlide(index) {
+            showSlide(index);
+            resetAutoSlide();
+        }
+
+        function autoSlide() {
+            slideInterval = setInterval(() => {
+                showSlide(currentSlide + 1);
+            }, 4000);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(slideInterval);
+            autoSlide();
+        }
+
+        autoSlide();
+
+        // ========== COUNTDOWN TIMER ==========
+        function startCountdown() {
+            let totalSeconds = 6 * 3600;
+            function updateTimer() {
+                if (totalSeconds <= 0) totalSeconds = 6 * 3600;
+                const h = Math.floor(totalSeconds / 3600);
+                const m = Math.floor((totalSeconds % 3600) / 60);
+                const s = totalSeconds % 60;
+                document.getElementById('hours').textContent = String(h).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(m).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+                totalSeconds--;
+            }
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+        startCountdown();
+
+        // ========== BACK TO TOP ==========
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTopBtn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ========== FILTER TAG CLICK ==========
+        document.querySelectorAll('.filter-tag').forEach(tag => {
+            tag.addEventListener('click', function() {
+                document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // ========== SEARCH FOCUS EFFECT ==========
+        const searchInput = document.querySelector('.search-bar input');
+        searchInput.addEventListener('focus', function() {
+            this.parentElement.style.boxShadow = '0 0 0 3px rgba(208,2,27,0.2)';
+            this.parentElement.style.borderRadius = '20px';
+        });
+        searchInput.addEventListener('blur', function() {
+            this.parentElement.style.boxShadow = 'none';
+        });
+    </script>
+</body>
+</html>
